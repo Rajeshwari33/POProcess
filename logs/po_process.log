@@ -1,0 +1,634 @@
+[2021-05-07 12:14:15] ERROR local variable 'user_name' referenced before assignment
+[2021-05-07 12:14:15] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 27, in get_user_details
+    if len(str(user_name)) > 0:
+UnboundLocalError: local variable 'user_name' referenced before assignment
+[2021-05-07 12:15:02] ERROR local variable 'user_name' referenced before assignment
+[2021-05-07 12:15:02] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 27, in get_user_details
+    if len(str(user_name)) > 0:
+UnboundLocalError: local variable 'user_name' referenced before assignment
+[2021-05-07 12:16:42] ERROR can only concatenate str (not "int") to str
+[2021-05-07 12:16:42] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 37, in get_user_details
+    prf_number = expression + number + user_name_changed + "-T"
+TypeError: can only concatenate str (not "int") to str
+[2021-05-07 12:17:38] ERROR can only concatenate str (not "int") to str
+[2021-05-07 12:17:38] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 39, in get_user_details
+    prf_number = expression + number + user_name_changed + "-T"
+TypeError: can only concatenate str (not "int") to str
+[2021-05-07 12:18:56] ERROR can only concatenate str (not "int") to str
+[2021-05-07 12:18:56] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 40, in get_user_details
+    prf_number = expression + number + user_name_changed + "-T"
+TypeError: can only concatenate str (not "int") to str
+[2021-05-07 13:53:06] ERROR Field 'prf_number' expected a number but got 'PRF20211Pr-T'.
+[2021-05-07 13:53:06] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'PRF20211Pr-T'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 191, in get_prf_details
+    reqirement_details.save()
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1409, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1352, in as_sql
+    value_rows = [
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1353, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1353, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1294, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 842, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 837, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'prf_number' expected a number but got 'PRF20211Pr-T'.
+[2021-05-08 16:10:46] ERROR UploadFiles() got an unexpected keyword argument 'uploaded_by'
+[2021-05-08 16:10:46] ERROR Error in Getting File Upload
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 174, in get_file_upload
+    upload_files = UploadFiles.objects.create(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: UploadFiles() got an unexpected keyword argument 'uploaded_by'
+[2021-05-08 16:12:39] ERROR (1048, "Column 'purchase_requirement_id' cannot be null")
+[2021-05-08 16:12:39] ERROR Error in Getting File Upload
+Traceback (most recent call last):
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1048, "Column 'purchase_requirement_id' cannot be null")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 174, in get_file_upload
+    upload_files = UploadFiles.objects.create(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 453, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 906, in _do_insert
+    return manager._insert(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1410, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\mysql\base.py", line 78, in execute
+    raise IntegrityError(*tuple(e.args))
+django.db.utils.IntegrityError: (1048, "Column 'purchase_requirement_id' cannot be null")
+[2021-05-08 16:14:00] ERROR Cannot assign "1": "UploadFiles.quotation_details" must be a "QuotationDetails" instance.
+[2021-05-08 16:14:00] ERROR Error in Getting File Upload
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 174, in get_file_upload
+    upload_files = UploadFiles.objects.create(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 485, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\related_descriptors.py", line 215, in __set__
+    raise ValueError(
+ValueError: Cannot assign "1": "UploadFiles.quotation_details" must be a "QuotationDetails" instance.
+[2021-05-08 16:29:01] ERROR UploadFiles() got an unexpected keyword argument 'uploaded_by'
+[2021-05-08 16:29:01] ERROR Error in Getting File Upload
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 205, in get_file_upload
+    upload_files = UploadFiles.objects.create(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: UploadFiles() got an unexpected keyword argument 'uploaded_by'
+[2021-05-10 16:44:39] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 16:44:39] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:02:11] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:02:11] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:12:21] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:12:21] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:13:34] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:13:34] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:14:28] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:14:28] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:15:28] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:15:28] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 60, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 18:47:21] ERROR local variable 'budget_category' referenced before assignment
+[2021-05-10 18:47:21] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 62, in get_user_details
+    "budget_category" : budget_category,
+UnboundLocalError: local variable 'budget_category' referenced before assignment
+[2021-05-10 19:33:54] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:33:54] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 63, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:36:45] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:36:45] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 67, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:43:54] ERROR local variable 'location' referenced before assignment
+[2021-05-10 19:43:54] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 62, in get_user_details
+    "location" : location
+UnboundLocalError: local variable 'location' referenced before assignment
+[2021-05-10 19:48:53] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:48:53] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 67, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:52:06] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:52:06] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 53, in get_user_details
+    "reporting_manager": reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:52:43] ERROR Object of type QuerySet is not JSON serializable
+[2021-05-10 19:52:43] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 74, in get_user_details
+    return JsonResponse ({
+  File "C:\Users\user\Envs\django\lib\site-packages\django\http\response.py", line 603, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\core\serializers\json.py", line 105, in default
+    return super().default(o)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+[2021-05-10 19:54:31] ERROR local variable 'manager_dict' referenced before assignment
+[2021-05-10 19:54:31] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 75, in get_user_details
+    "reporting_manager" : manager_dict,
+UnboundLocalError: local variable 'manager_dict' referenced before assignment
+[2021-05-10 19:55:01] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:55:01] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 53, in get_user_details
+    "reporting_manager": reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:58:39] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:58:39] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 67, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:59:25] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:59:25] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 50, in get_user_details
+    print(reporting_manager)
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:59:32] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 19:59:32] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 50, in get_user_details
+    print(reporting_manager)
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 20:01:06] ERROR local variable 'reporting_manager' referenced before assignment
+[2021-05-10 20:01:06] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 66, in get_user_details
+    "reporting_manager" : reporting_manager,
+UnboundLocalError: local variable 'reporting_manager' referenced before assignment
+[2021-05-10 20:03:56] ERROR 'QuerySet' object has no attribute 'append'
+[2021-05-10 20:03:56] ERROR Error in Getting user details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 57, in get_user_details
+    locations.append(location.location)
+AttributeError: 'QuerySet' object has no attribute 'append'
+[2021-05-10 20:23:46] ERROR '>' not supported between instances of 'str' and 'int'
+[2021-05-10 20:23:46] ERROR Error in Getting Vendor Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 148, in get_vendor_details
+    if (vendor_name) > 0:
+TypeError: '>' not supported between instances of 'str' and 'int'
+[2021-05-10 20:25:09] ERROR '>' not supported between instances of 'str' and 'int'
+[2021-05-10 20:25:09] ERROR Error in Getting Vendor Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 148, in get_vendor_details
+    if (vendor_name) > 0:
+TypeError: '>' not supported between instances of 'str' and 'int'
+[2021-05-11 11:18:58] ERROR Expecting value: line 3 column 1 (char 27)
+[2021-05-11 11:18:58] ERROR Error in Getting Vendor Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 85, in get_location_details
+    data = json.loads(body)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 3 column 1 (char 27)
+[2021-05-11 11:52:58] ERROR local variable 'prf_list' referenced before assignment
+[2021-05-11 11:52:58] ERROR Error in Getting PRF List for Department Head
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 847, in dept_head_prf_list
+    "prf_list" : prf_list
+UnboundLocalError: local variable 'prf_list' referenced before assignment
+[2021-05-11 11:56:38] ERROR local variable 'prf_list' referenced before assignment
+[2021-05-11 11:56:38] ERROR Error in Getting PRF List for Department Head
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 848, in dept_head_prf_list
+    "prf_list" : prf_list
+UnboundLocalError: local variable 'prf_list' referenced before assignment
+[2021-05-11 13:04:16] ERROR 'PurchaseRequirement' object has no attribute 'prf_numbers'
+[2021-05-11 13:04:16] ERROR Error in Getting PRF List for Department Head
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 826, in dept_head_prf_list
+    prf_numbers = requirement.prf_numbers
+AttributeError: 'PurchaseRequirement' object has no attribute 'prf_numbers'
+[2021-05-11 14:19:45] ERROR 'str' object has no attribute 'append'
+[2021-05-11 14:19:45] ERROR Error in Getting PRF List for Department Head
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 826, in dept_head_prf_list
+    department.append(requirement.department)
+AttributeError: 'str' object has no attribute 'append'
+[2021-05-12 13:09:30] ERROR Expecting ',' delimiter: line 3 column 16 (char 20)
+[2021-05-12 13:09:30] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 289, in get_prf_details
+    data = json.loads(body)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 3 column 16 (char 20)
+[2021-05-12 13:22:47] ERROR local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:22:47] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 378, in get_prf_details
+    tenant_id = tenant_id,
+UnboundLocalError: local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:23:52] ERROR local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:23:52] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 376, in get_prf_details
+    print(tenant_id)
+UnboundLocalError: local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:24:03] ERROR local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:24:03] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 376, in get_prf_details
+    print(tenant_id)
+UnboundLocalError: local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:25:00] ERROR local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:25:00] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 377, in get_prf_details
+    print(tenant_id)
+UnboundLocalError: local variable 'tenant_id' referenced before assignment
+[2021-05-12 13:29:37] ERROR local variable 'material_name' referenced before assignment
+[2021-05-12 13:29:37] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 419, in get_prf_details
+    material_name = material_name,
+UnboundLocalError: local variable 'material_name' referenced before assignment
+[2021-05-12 13:36:10] ERROR local variable 'budget_category' referenced before assignment
+[2021-05-12 13:36:10] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 422, in get_prf_details
+    budget_category = budget_category,
+UnboundLocalError: local variable 'budget_category' referenced before assignment
+[2021-05-12 13:37:07] ERROR local variable 'budget_category' referenced before assignment
+[2021-05-12 13:37:07] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 423, in get_prf_details
+    budget_category = budget_category,
+UnboundLocalError: local variable 'budget_category' referenced before assignment
+[2021-05-12 13:39:04] ERROR local variable 'budget_category' referenced before assignment
+[2021-05-12 13:39:04] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 424, in get_prf_details
+    budget_category = budget_category,
+UnboundLocalError: local variable 'budget_category' referenced before assignment
+[2021-05-12 13:54:55] ERROR 'builtin_function_or_method' object is not iterable
+[2021-05-12 13:54:55] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 416, in get_prf_details
+    for k,v in value.items:
+TypeError: 'builtin_function_or_method' object is not iterable
+[2021-05-12 13:59:15] ERROR 'builtin_function_or_method' object is not iterable
+[2021-05-12 13:59:15] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 417, in get_prf_details
+    for k,v in value.items:
+TypeError: 'builtin_function_or_method' object is not iterable
+[2021-05-12 14:00:52] ERROR local variable 'vendor_type' referenced before assignment
+[2021-05-12 14:00:52] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 459, in get_prf_details
+    vendor_type=vendor_type,
+UnboundLocalError: local variable 'vendor_type' referenced before assignment
+[2021-05-12 14:06:43] ERROR local variable 'vendor_material_name' referenced before assignment
+[2021-05-12 14:06:43] ERROR Error in Getting PRF details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 508, in get_prf_details
+    material_name=vendor_material_name,
+UnboundLocalError: local variable 'vendor_material_name' referenced before assignment
+[2021-05-13 10:53:27] ERROR local variable 'vendor_type' referenced before assignment
+[2021-05-13 10:53:27] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 814, in get_edit_prf_form_details
+    quotation.vendor_type = vendor_type
+UnboundLocalError: local variable 'vendor_type' referenced before assignment
+[2021-05-13 10:56:21] ERROR local variable 'vendor_type' referenced before assignment
+[2021-05-13 10:56:21] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 809, in get_edit_prf_form_details
+    print(vendor_type)
+UnboundLocalError: local variable 'vendor_type' referenced before assignment
+[2021-05-13 10:59:17] ERROR local variable 'vendor_name' referenced before assignment
+[2021-05-13 10:59:17] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 809, in get_edit_prf_form_details
+    print(vendor_name)
+UnboundLocalError: local variable 'vendor_name' referenced before assignment
+[2021-05-13 11:49:03] ERROR local variable 'vendor_name' referenced before assignment
+[2021-05-13 11:49:03] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 809, in get_edit_prf_form_details
+    print(vendor_name)
+UnboundLocalError: local variable 'vendor_name' referenced before assignment
+[2021-05-13 11:49:44] ERROR local variable 'poquotationinfo_list' referenced before assignment
+[2021-05-13 11:49:44] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 809, in get_edit_prf_form_details
+    print(poquotationinfo_list)
+UnboundLocalError: local variable 'poquotationinfo_list' referenced before assignment
+[2021-05-13 11:50:35] ERROR local variable 'vendor_type' referenced before assignment
+[2021-05-13 11:50:35] ERROR Error in Getting Edit PRF Form Details
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 815, in get_edit_prf_form_details
+    quotation.vendor_type = vendor_type
+UnboundLocalError: local variable 'vendor_type' referenced before assignment
+[2021-05-13 16:22:26] INFO Executing SQL Query..
+[2021-05-13 16:22:26] INFO SELECT IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 16:29:29] INFO Executing SQL Query..
+[2021-05-13 16:29:29] INFO SELECT IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 16:47:32] INFO Executing SQL Query..
+[2021-05-13 16:47:32] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 16:47:32] ERROR list indices must be integers or slices, not str
+[2021-05-13 16:47:32] ERROR Error in Getting User PRF List
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 597, in get_user_prf_list
+    requirement_id = query_output["data"]["requirement_id"]
+TypeError: list indices must be integers or slices, not str
+[2021-05-13 16:48:46] INFO Executing SQL Query..
+[2021-05-13 16:48:46] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 16:48:46] ERROR list indices must be integers or slices, not str
+[2021-05-13 16:48:46] ERROR Error in Getting User PRF List
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 597, in get_user_prf_list
+    requirement_id = str(query_output["data"]["requirement_id"])
+TypeError: list indices must be integers or slices, not str
+[2021-05-13 16:49:25] INFO Executing SQL Query..
+[2021-05-13 16:49:25] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:24:11] INFO Executing SQL Query..
+[2021-05-13 17:24:11] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:24:11] INFO Executing SQL Query..
+[2021-05-13 17:24:11] INFO SELECT IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenants_id = '1' AND groups_id = '1' AND entities_id = '1' AND module_id = '1';
+[2021-05-13 17:24:11] INFO Error Executing SQL Query!!
+Traceback (most recent call last):
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1054, "Unknown column 'tenants_id' in 'where clause'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 19, in execute_sql_query
+    cursor.execute(query)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\utils.py", line 82, in _execute
+    return self.cursor.execute(sql)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\user\Envs\django\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'tenants_id' in 'where clause'")
+[2021-05-13 17:24:11] ERROR the JSON object must be str, bytes or bytearray, not NoneType
+[2021-05-13 17:24:11] ERROR Error in Getting PRF Form fields
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 657, in get_prf_form_input_fields
+    line_query_output = json.loads(execute_sql_query(final_line_query, object_type="table"))
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\__init__.py", line 339, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not NoneType
+[2021-05-13 17:25:46] INFO Executing SQL Query..
+[2021-05-13 17:25:46] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:25:46] INFO Executing SQL Query..
+[2021-05-13 17:25:46] INFO SELECT IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:25:46] INFO Executing SQL Query..
+[2021-05-13 17:25:46] INFO SELECT IFNULL(TRIM(vendor_type), '') AS 'vendor_type', IFNULL(TRIM(vendor_name), '') AS 'vendor_name', IFNULL(TRIM(vendor_code), '') AS 'vendor_code', IFNULL(TRIM(address), '') AS 'address', IFNULL(TRIM(location), '') AS 'location', IFNULL(TRIM(gst_number), '') AS 'gst_number', IFNULL(TRIM(pan_number), '') AS 'pan_number', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value' FROM po_process.quotation_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:25:46] INFO Executing SQL Query..
+[2021-05-13 17:25:46] INFO SELECT IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.quotation_line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:27:27] INFO Executing SQL Query..
+[2021-05-13 17:27:27] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE created_by = '3' AND id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:27:27] INFO Executing SQL Query..
+[2021-05-13 17:27:27] INFO SELECT IFNULL(TRIM(id), '') AS 'poreqinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:27:27] INFO Executing SQL Query..
+[2021-05-13 17:27:27] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudget_id', IFNULL(TRIM(vendor_type), '') AS 'vendor_type', IFNULL(TRIM(vendor_name), '') AS 'vendor_name', IFNULL(TRIM(vendor_code), '') AS 'vendor_code', IFNULL(TRIM(address), '') AS 'address', IFNULL(TRIM(location), '') AS 'location', IFNULL(TRIM(gst_number), '') AS 'gst_number', IFNULL(TRIM(pan_number), '') AS 'pan_number', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value' FROM po_process.quotation_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-13 17:27:27] INFO Executing SQL Query..
+[2021-05-13 17:27:27] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudgetinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.quotation_line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 11:54:06] INFO Executing SQL Query..
+[2021-05-14 11:54:06] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND department = 'ADMIN' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 12:00:30] INFO Executing SQL Query..
+[2021-05-14 12:00:30] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 12:00:30] INFO Executing SQL Query..
+[2021-05-14 12:00:30] INFO SELECT IFNULL(TRIM(id), '') AS 'poreqinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 12:00:30] INFO Executing SQL Query..
+[2021-05-14 12:00:30] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudget_id', IFNULL(TRIM(vendor_type), '') AS 'vendor_type', IFNULL(TRIM(vendor_name), '') AS 'vendor_name', IFNULL(TRIM(vendor_code), '') AS 'vendor_code', IFNULL(TRIM(address), '') AS 'address', IFNULL(TRIM(location), '') AS 'location', IFNULL(TRIM(gst_number), '') AS 'gst_number', IFNULL(TRIM(pan_number), '') AS 'pan_number', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value' FROM po_process.quotation_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 12:00:30] INFO Executing SQL Query..
+[2021-05-14 12:00:30] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudgetinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.quotation_line_details WHERE created_by = '3' AND purchase_requirement_id = '19' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 12:45:51] ERROR local variable 'remarks' referenced before assignment
+[2021-05-14 12:45:51] ERROR Error in Department Head Functionality
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 1058, in dept_haed_functionality
+    order.dept_head_approved_comments = remarks
+UnboundLocalError: local variable 'remarks' referenced before assignment
+[2021-05-14 12:49:52] ERROR local variable 'approve' referenced before assignment
+[2021-05-14 12:49:52] ERROR Error in Department Head Functionality
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 1053, in dept_haed_functionality
+    if approve is not None:
+UnboundLocalError: local variable 'approve' referenced before assignment
+[2021-05-14 13:03:58] ERROR ['“2” value must be either True or False.']
+[2021-05-14 13:03:58] ERROR Error in Department Head Functionality
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 1052, in dept_haed_functionality
+    order.save()
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 763, in save_base
+    updated = self._save_table(
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 845, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\base.py", line 899, in _do_update
+    return filtered._update(values) > 0
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\query.py", line 802, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1535, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1156, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\backends\mysql\compiler.py", line 43, in as_sql
+    update_query, update_params = super().as_sql()
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\sql\compiler.py", line 1501, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 842, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 837, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 986, in get_prep_value
+    return self.to_python(value)
+  File "C:\Users\user\Envs\django\lib\site-packages\django\db\models\fields\__init__.py", line 976, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“2” value must be either True or False.']
+[2021-05-14 18:28:05] ERROR Expecting value: line 1 column 1 (char 0)
+[2021-05-14 18:28:05] ERROR Error in Department Head Functionality
+Traceback (most recent call last):
+  File "D:\Adventbiz\FinanceControlledApplication\poProcess\process\views.py", line 1018, in dept_head_functionality
+    data = json.loads(body)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "c:\users\user\appdata\local\programs\python\python39\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2021-05-14 18:55:31] INFO Executing SQL Query..
+[2021-05-14 18:55:31] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND is_dept_head_approved = 1 AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 18:56:32] INFO Executing SQL Query..
+[2021-05-14 18:56:32] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND is_dept_head_approved = 1 AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 18:59:45] INFO Executing SQL Query..
+[2021-05-14 18:59:45] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 18:59:45] INFO Executing SQL Query..
+[2021-05-14 18:59:45] INFO SELECT IFNULL(TRIM(id), '') AS 'poreqinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 18:59:45] INFO Executing SQL Query..
+[2021-05-14 18:59:45] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudget_id', IFNULL(TRIM(vendor_type), '') AS 'vendor_type', IFNULL(TRIM(vendor_name), '') AS 'vendor_name', IFNULL(TRIM(vendor_code), '') AS 'vendor_code', IFNULL(TRIM(address), '') AS 'address', IFNULL(TRIM(location), '') AS 'location', IFNULL(TRIM(gst_number), '') AS 'gst_number', IFNULL(TRIM(pan_number), '') AS 'pan_number', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value' FROM po_process.quotation_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 18:59:45] INFO Executing SQL Query..
+[2021-05-14 18:59:45] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudgetinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.quotation_line_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 19:31:29] INFO Executing SQL Query..
+[2021-05-14 19:31:29] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND is_dept_head_approved = 1 AND is_p2p_approved = 1 AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 19:33:21] INFO Executing SQL Query..
+[2021-05-14 19:33:21] INFO SELECT IFNULL(TRIM(id), '') AS 'requirement_id', IFNULL(TRIM(prf_number), '') AS 'prf_number', IFNULL(TRIM(location), '') AS 'location', IFNULL(DATE_FORMAT(requirement_date, '%d-%m-%Y'), '') AS 'requirement_date', IFNULL(TRIM(reporting_manager), '') AS 'reporting_manager', IFNULL(TRIM(department), '') AS 'department', IFNULL(TRIM(budget_allocated), '') AS 'budget_allocated', IFNULL(TRIM(is_budgeted), '') AS 'is_budgeted', IFNULL(TRIM(purpose), '') AS 'purpose', IFNULL(TRIM(purchase_catagory), '') AS 'purchase_catagory', IFNULL(TRIM(purchase_type), '') AS 'purchase_type', IFNULL(DATE_FORMAT(date_of_delivery_expected, '%d-%m-%Y'), '') AS 'date_of_delivery_expected', IFNULL(TRIM(benefits), '') AS 'perceived_benefits', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value', IFNULL(TRIM(finalized_vendor), '') AS 'finalized_vendor', IFNULL(TRIM(po_status), '') AS 'po_status' FROM po_process.purchase_requirement WHERE is_processed = 1 AND is_dept_head_approved = 1 AND is_p2p_approved = 1 AND id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 19:33:21] INFO Executing SQL Query..
+[2021-05-14 19:33:21] INFO SELECT IFNULL(TRIM(id), '') AS 'poreqinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(budget_category), '') AS 'budget_category', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.line_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 19:33:21] INFO Executing SQL Query..
+[2021-05-14 19:33:21] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudget_id', IFNULL(TRIM(vendor_type), '') AS 'vendor_type', IFNULL(TRIM(vendor_name), '') AS 'vendor_name', IFNULL(TRIM(vendor_code), '') AS 'vendor_code', IFNULL(TRIM(address), '') AS 'address', IFNULL(TRIM(location), '') AS 'location', IFNULL(TRIM(gst_number), '') AS 'gst_number', IFNULL(TRIM(pan_number), '') AS 'pan_number', IFNULL(CONVERT(total_line_value, CHAR), '0.00') AS 'total_line_value' FROM po_process.quotation_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
+[2021-05-14 19:33:21] INFO Executing SQL Query..
+[2021-05-14 19:33:21] INFO SELECT IFNULL(TRIM(id), '') AS 'pobudgetinfo_id', IFNULL(TRIM(material_name), '') AS 'material_name', IFNULL(TRIM(line_description), '') AS 'line_description', IFNULL(TRIM(quantity), '') AS 'quantity', IFNULL(CONVERT(unit_value, CHAR), '0.00') AS 'unit_value', IFNULL(CONVERT(total_value, CHAR), '0.00') AS 'total_value' FROM po_process.quotation_line_details WHERE created_by = '3' AND purchase_requirement_id = '18' AND tenant_id = '1' AND group_id = '1' AND entity_id = '1' AND module_id = '1';
