@@ -21,13 +21,21 @@ class PurchaseRequirement(models.Model):
     purpose = models.TextField(verbose_name="Purpose", null=True)
     purchase_catagory = models.CharField(max_length=32, verbose_name="Purchase Catagory", null=True)
     purchase_type = models.CharField(max_length=64, verbose_name="Type Of Purchase", null=True)
-    date_of_delivery_expected = models.DateTimeField(verbose_name="Date of Delivery Expected", null=True)
+    date_of_delivery_expected = models.CharField(max_length=128, verbose_name="Date of Delivery Expected", null=True)
     delivery_address = models.TextField(verbose_name="Delivery Expected", null=True)
     benefits = models.TextField(verbose_name="Perceived Benefits", null=True)
+    payment_term = models.CharField(max_length=255, verbose_name="Payment Term", null=True)
     total_line_value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Total Line Value", default=0.00)
     finalized_vendor = models.CharField(max_length=255, verbose_name="Finalized Vendor", null=True)
+    VendorFile_name = models.TextField(verbose_name="Vendor File Name", null=True)
+    vendor_selection_reason = models.TextField(verbose_name="Vendor Selection Reason", null=True)
+    approver_name = models.CharField(max_length=255, verbose_name="Approver Name", null=True)
+    approver_mailid = models.TextField(verbose_name="Approver Mail Id", null=True)
+    approver_department = models.CharField(max_length=255, verbose_name="Approver Department", null=True)
     is_processed = models.IntegerField(default=False, verbose_name="Is Processed ?")
     po_status = models.CharField(max_length=128, verbose_name="PO Status", null=True)
+    po_file_name = models.TextField(verbose_name="PO File Name", null=True)
+    finance_approver = models.CharField(max_length=255, verbose_name="Finance Approver Name", null=True)
     is_dept_head_approved = models.IntegerField(default=False, verbose_name="Is Department Head Approved ?")
     dept_head_approved_date = models.DateTimeField(verbose_name="Department Head Approved Date", null=True)
     dept_head_approved_comments = models.TextField(verbose_name="Department Head Approved Comments", null=True)
@@ -88,7 +96,7 @@ class QuotationDetails(models.Model):
     address = models.TextField(verbose_name="Address 1", null=True)
     location = models.CharField(max_length=32, verbose_name="Location", null=True)
     gst_number = models.CharField(max_length=15, verbose_name="GST Number", null=True)
-    pan_number = models.CharField(max_length=10, verbose_name="PAN Number", null=True)
+    mail_id = models.CharField(max_length=255, verbose_name="Mail Id", null=True)
     total_line_value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Total Line Value", default=0.00)
     quotationfile_name = models.TextField(verbose_name="Quotation File Name", null=True)
     VendorFile_name = models.TextField(verbose_name="Vendor File Name", null=True)
@@ -116,33 +124,6 @@ class QuotationLineDetails(models.Model):
     quantity = models.PositiveIntegerField(verbose_name="Quantity", null=True)
     unit_value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Unit Value", default=0.00)
     total_value = models.DecimalField(max_digits=15, decimal_places=2, verbose_name="Total Value", default=0.00)
-    is_active = models.BooleanField(default=True, verbose_name="Active ?")
-    created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
-    created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
-    modified_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
-    modified_date = models.DateTimeField(default=timezone.now, verbose_name="Modified Date")
-    uploaded_by = models.CharField(max_length=64, verbose_name="User Name", null=True)
-
-class VendorSupportingDocuments(models.Model):
-    class Meta:
-        db_table = "vendor_supporting_documents"
-
-    purchase_requirement = models.ForeignKey(PurchaseRequirement, verbose_name="Purchase Requirement Id", on_delete=models.CASCADE)
-    quotation_details = models.ForeignKey(QuotationDetails, verbose_name="Quotation Details Id", on_delete=models.CASCADE)
-    tenant_id = models.PositiveSmallIntegerField(verbose_name="Tenant Id", null=True)
-    group_id = models.PositiveSmallIntegerField(verbose_name="Group Id", null=True)
-    entity_id = models.PositiveSmallIntegerField(verbose_name="Entity Id", null=True)
-    module_id = models.PositiveSmallIntegerField(verbose_name="Module Id", null=True)
-    file_1_name = models.TextField(verbose_name="File 1 Name", null=True)
-    file_1_path = models.TextField(verbose_name="File 1 Path", null=True)
-    file_2_name = models.TextField(verbose_name="File 2 Name", null=True)
-    file_2_path = models.TextField(verbose_name="File 2 Path", null=True)
-    file_3_name = models.TextField(verbose_name="File 3 Name", null=True)
-    file_3_path = models.TextField(verbose_name="File 3 Path", null=True)
-    file_4_name = models.TextField(verbose_name="File 4 Name", null=True)
-    file_4_path = models.TextField(verbose_name="File 4 Path", null=True)
-    file_5_name = models.TextField(verbose_name="File 5 Name", null=True)
-    file_5_path = models.TextField(verbose_name="File 5 Path", null=True)
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
     created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
@@ -182,23 +163,6 @@ class ReportingManager(models.Model):
     entity_id = models.PositiveSmallIntegerField(verbose_name="Entity Id", null=True)
     module_id = models.PositiveSmallIntegerField(verbose_name="Module Id", null=True)
     reporting_manager = models.CharField(max_length=128, verbose_name="Reporting Manager", null=True)
-    user_id = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
-    is_active = models.BooleanField(default=True, verbose_name="Active ?")
-    created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
-    created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
-    modified_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
-    modified_date = models.DateTimeField(default=timezone.now, verbose_name="Modified Date")
-    uploaded_by = models.CharField(max_length=64, verbose_name="User Name", null=True)
-
-class BudgetCategory(models.Model):
-    class Meta:
-        db_table = "budget_category"
-
-    tenant_id = models.PositiveSmallIntegerField(verbose_name="Tenant Id", null=True)
-    group_id = models.PositiveSmallIntegerField(verbose_name="Group Id", null=True)
-    entity_id = models.PositiveSmallIntegerField(verbose_name="Entity Id", null=True)
-    module_id = models.PositiveSmallIntegerField(verbose_name="Module Id", null=True)
-    budget_category = models.CharField(max_length=128, verbose_name="Budget Category", null=True)
     user_id = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
     is_active = models.BooleanField(default=True, verbose_name="Active ?")
     created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
@@ -277,3 +241,58 @@ class UploadFiles(models.Model):
     modified_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
     modified_date = models.DateTimeField(default=timezone.now, verbose_name="Modified Date")
     uploaded_by = models.CharField(max_length=64, verbose_name="User Name", null=True)
+
+class POFiles(models.Model):
+    class Meta:
+        db_table = "po_files"
+
+    purchase_requirement = models.ForeignKey(PurchaseRequirement, verbose_name="Purchase Requirement Id", on_delete=models.CASCADE)
+    # quotation_details = models.ForeignKey(QuotationDetails, verbose_name="Quotation Details Id", on_delete=models.CASCADE)
+    tenant_id = models.PositiveSmallIntegerField(verbose_name="Tenant Id", null=True)
+    group_id = models.PositiveSmallIntegerField(verbose_name="Group Id", null=True)
+    entity_id = models.PositiveSmallIntegerField(verbose_name="Entity Id", null=True)
+    module_id = models.PositiveSmallIntegerField(verbose_name="Module Id", null=True)
+    prf_number = models.CharField(max_length=64, verbose_name="PRF Number", null=True)
+    category = models.CharField(max_length=128, verbose_name="Category", null=True)
+    file_type = models.CharField(max_length=128, verbose_name="File Type", null=True)
+    file_path = models.TextField(verbose_name="File Path", null=True)
+    is_active = models.BooleanField(default=True, verbose_name="Active ?")
+    created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
+    modified_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    modified_date = models.DateTimeField(default=timezone.now, verbose_name="Modified Date")
+    uploaded_by = models.CharField(max_length=64, verbose_name="User Name", null=True)
+
+class VendorFiles(models.Model):
+    class Meta:
+        db_table = "vendor_files"
+
+    purchase_requirement = models.ForeignKey(PurchaseRequirement, verbose_name="Purchase Requirement Id", on_delete=models.CASCADE)
+    # quotation_details = models.ForeignKey(QuotationDetails, verbose_name="Quotation Details Id", on_delete=models.CASCADE)
+    tenant_id = models.PositiveSmallIntegerField(verbose_name="Tenant Id", null=True)
+    group_id = models.PositiveSmallIntegerField(verbose_name="Group Id", null=True)
+    entity_id = models.PositiveSmallIntegerField(verbose_name="Entity Id", null=True)
+    module_id = models.PositiveSmallIntegerField(verbose_name="Module Id", null=True)
+    prf_number = models.CharField(max_length=64, verbose_name="PRF Number", null=True)
+    category = models.CharField(max_length=128, verbose_name="Category", null=True)
+    file_type = models.CharField(max_length=128, verbose_name="File Type", null=True)
+    file_path = models.TextField(verbose_name="File Path", null=True)
+    is_active = models.BooleanField(default=True, verbose_name="Active ?")
+    created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
+    modified_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    modified_date = models.DateTimeField(default=timezone.now, verbose_name="Modified Date")
+    uploaded_by = models.CharField(max_length=64, verbose_name="User Name", null=True)
+
+class MailCredentials(models.Model):
+    class Meta:
+        db_table = "mail_credentials"
+
+    user_name = models.CharField(max_length=255, verbose_name="User Name", null=True)
+    mail_id = models.TextField(verbose_name="Mail Id", null=True)
+    password = models.CharField(max_length=128, verbose_name="Password", null=True)
+    department = models.CharField(max_length=64, verbose_name="Department", null=True)
+    user_id = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    is_active = models.BooleanField(default=True, verbose_name="Active ?")
+    created_by = models.PositiveSmallIntegerField(verbose_name="User Id", null=True)
+    created_date = models.DateTimeField(default=timezone.now, verbose_name="Created Date")
